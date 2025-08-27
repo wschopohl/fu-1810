@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for filepath in ../../questions/*.md; do
+    filename="${filepath##*/}"
+    tr -d "\r" < "../../questions/$filename" | ./lex > "../../questions-mochi/$filename"
+    echo "$filename converted"
+done
